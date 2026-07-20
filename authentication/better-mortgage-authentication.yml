@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.better.com/.well-known/openid-configuration
+docs: https://www.better.com/.well-known/openid-configuration
+summary:
+  types: [openIdConnect, oauth2]
+  oauth2_flows: [authorizationCode, implicit]
+  identity_provider: AWS Cognito
+schemes:
+- name: OpenIDConnect
+  type: openIdConnect
+  issuer: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ZQ2HayNPw
+  openIdConnectUrl: https://www.better.com/.well-known/openid-configuration
+  authorization_endpoint: https://prod.bettermg.com/api/idp/sso
+  token_endpoint: https://prod.bettermg.com/api/idp/token
+  userinfo_endpoint: https://prod.idp.bettermg.com/oauth2/userInfo
+  jwks_uri: https://prod.bettermg.com/.well-known/jwks.json
+  end_session_endpoint: https://prod.idp.bettermg.com/logout
+  registration_endpoint: https://prod.bettermg.com/api/idp/sso/registration
+  revocation_endpoint: https://prod.idp.bettermg.com/oauth2/revoke
+  response_types_supported: [code, token]
+  id_token_signing_alg_values_supported: [RS256]
+  code_challenge_methods_supported: [S256]
+  token_endpoint_auth_methods_supported: [none]
+  subject_types_supported: [public]
+  sources: [well-known/better-mortgage-openid-configuration.json]
