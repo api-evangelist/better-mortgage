@@ -1,0 +1,21 @@
+generated: '2026-07-18'
+method: searched
+source: live probe of https://www.better.com/.well-known/*
+host: https://www.better.com
+notes: >-
+  Better exposes an OpenID Connect / OAuth 2.0 discovery surface backed by AWS
+  Cognito (issuer cognito-idp.us-east-1.amazonaws.com/us-east-1_ZQ2HayNPw). The
+  identity provider endpoints resolve to prod.bettermg.com / prod.idp.bettermg.com.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: better-mortgage-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: better-mortgage-oauth-authorization-server.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

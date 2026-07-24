@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.better.com/.well-known/openid-configuration
+docs: https://www.better.com/.well-known/openid-configuration
+schemes:
+- name: OpenIDConnect
+  source: well-known/better-mortgage-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://prod.bettermg.com/api/idp/sso
+    tokenUrl: https://prod.bettermg.com/api/idp/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; required to obtain an ID token.
+  flows: [authorizationCode]
+  sources: [well-known/better-mortgage-openid-configuration.json]
+- scope: email
+  description: Access to the user's email address claim.
+  flows: [authorizationCode]
+  sources: [well-known/better-mortgage-openid-configuration.json]
+- scope: phone
+  description: Access to the user's phone number claim.
+  flows: [authorizationCode]
+  sources: [well-known/better-mortgage-openid-configuration.json]
+- scope: profile
+  description: Access to the user's basic profile claims.
+  flows: [authorizationCode]
+  sources: [well-known/better-mortgage-openid-configuration.json]

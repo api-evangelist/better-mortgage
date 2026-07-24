@@ -1,8 +1,30 @@
 aid: better-mortgage
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/better-mortgage.png
 name: Better Mortgage
-description: 'Better Mortgage is a company surfaced as a portfolio company of kleiner-perkins and added
-  to the API Evangelist network as a stub for enrichment. Sector: fintech. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Better (Better Home & Finance Company, operating as Better Mortgage) is a
+  New York-based fintech founded in 2014 by Vishal Garg that digitizes home
+  finance end to end. Its online platform originates purchase mortgages,
+  refinances, home equity lines of credit (HELOC), and VA loans, and connects
+  borrowers with title, closing, homeowners insurance (via Better Cover), and
+  real-estate agent matching. Better was the first fintech to fund over $100
+  billion in home loans entirely online and markets an "AI-powered" One Day
+  Mortgage experience. Better does not publish a general-purpose public
+  developer API, but it operates a live OpenID Connect / OAuth 2.0 identity
+  provider (backed by AWS Cognito) for partner single sign-on, discoverable at
+  its /.well-known endpoints.
 url: https://raw.githubusercontent.com/api-evangelist/better-mortgage/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +34,29 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Fintech
-apis: []
+- Mortgage
+- Lending
+- Real Estate
+- Home Finance
+- HELOC
+- OpenID Connect
+apis:
+- name: Better Identity Provider
+  description: >-
+    Better's OpenID Connect / OAuth 2.0 identity provider for partner single
+    sign-on, backed by AWS Cognito. Endpoints and metadata are published via
+    the standard OIDC and OAuth authorization-server discovery documents.
+  humanURL: https://www.better.com/.well-known/openid-configuration
+  baseURL: https://prod.bettermg.com
+  properties:
+  - type: Authentication
+    url: authentication/better-mortgage-authentication.yml
+  - type: OAuthScopes
+    url: scopes/better-mortgage-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +65,26 @@ maintainers:
 common:
 - type: Website
   url: https://www.better.com
+- type: Blog
+  url: https://www.better.com/content
+- type: Support
+  url: https://www.better.com/faq
+- type: TermsOfService
+  url: https://www.better.com/terms
+- type: Pricing
+  url: https://www.better.com/rates
+- type: WellKnown
+  url: well-known/better-mortgage-well-known.yml
+- type: Authentication
+  url: authentication/better-mortgage-authentication.yml
+- type: OAuthScopes
+  url: scopes/better-mortgage-scopes.yml
+- type: Conformance
+  url: conformance/better-mortgage-conformance.yml
+- type: DomainSecurity
+  url: security/better-mortgage-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

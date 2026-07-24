@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.better.com/.well-known/openid-configuration
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Published /.well-known/oauth-authorization-server (RFC 8414) with
+    authorization, token, and revocation endpoints.
+- id: oidc
+  conforms: true
+  evidence: >-
+    Published /.well-known/openid-configuration with issuer, jwks_uri,
+    userinfo_endpoint, and RS256 id_token signing.
+- id: pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256.
+- id: rfc8414-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with server metadata.
